@@ -97,4 +97,14 @@ background:linear-gradient(135deg, var(--blue-a), var(--blue-b));
      color: rgb(255, 255, 255);
 }
 
+
+ .col-start {
+   padding-left:8px !important
+ }
+
+ .col-end 
+  {
+   padding-right:8px !important
+ }
+
 ------------------------------------------------------------------CSS---------------End--------------------------
