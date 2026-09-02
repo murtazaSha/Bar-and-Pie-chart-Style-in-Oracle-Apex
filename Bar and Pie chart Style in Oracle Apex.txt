@@ -1,0 +1,100 @@
+------------------------------------------------------------------Bar-chart---------------Start--------------------------
+Step 1: Create Region
+	Name:  Barchart
+	Title: Barchart
+	Type:  Chart
+        Column CSS Classes: col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-6
+	HTML DOM ID: Barchart_ID
+
+	Location: local Database
+	Type: SQL Query
+
+	SQL Query:
+
+	   select d.dept_name, sum(s.salary)  
+		from employees s 
+		inner join  departments d on s.dept_id=d.dept_id
+		group by
+		d.dept_name
+
+	Series Name: DEPT_NAME
+	Label: DEPT_NAME
+	Value: SUM(S.SALARY)
+	Legend Tooltip: DEPT_NAME
+	Label Tooltip: DEPT_NAME
+
+------------------------------------------------------------------Bar-chart---------------End--------------------------
+
+
+
+------------------------------------------------------------------Pie-chart---------------Start--------------------------
+
+Step 1: Create Region
+	Name:  Pie_Chart
+	Title: Pie Chart
+	Type:  Chart
+        Column CSS Classes: col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-6
+	HTML DOM ID: Pie_Chart
+
+	Location: local Database
+	Type: SQL Query
+
+	SQL Query:
+
+	   select d.dept_name, sum(s.salary)  
+		from employees s 
+		inner join  departments d on s.dept_id=d.dept_id
+		group by
+		d.dept_name
+
+	Series Name: DEPT_NAME
+	Label: DEPT_NAME
+	Value: SUM(S.SALARY)
+
+
+------------------------------------------------------------------Pie-chart---------------End--------------------------
+
+------------------------------------------------------------------CSS---------------Start--------------------------
+
+ :root{
+    --green-a:#22c55e; --green-b:#15803d;
+    --blue-a:#3b82f6;  --blue-b:#1d4ed8;
+    --purple-a:#a855f7; --purple-b:#6d28d9;
+    --orange-a:#fb923c; --orange-b:#dc2626;
+  }
+
+  #Barchart_ID, #Barchart_ID .t-Region-header{
+background:linear-gradient(135deg, var(--green-a), var(--green-b));
+}
+
+#Barchart_ID polygon,  #Barchart_ID path {
+       fill: #1d4ed8 !important;
+}
+
+#Barchart_ID text{
+    fill:#f8fafc !important;
+}
+
+#Barchart_ID .t-Region-title{
+     color: rgb(246, 242, 242);
+}
+
+
+#Pie_Chart, #Pie_Chart .t-Region-header{
+background:linear-gradient(135deg, var(--blue-a), var(--blue-b));
+}
+
+
+#Pie_Chart polygon,  #Pie_Chart path {
+       fill:  #22c55e !important;
+}
+
+#Pie_Chart text{
+    fill:#f8f3f3 !important;
+}
+
+#Pie_Chart .t-Region-title{
+     color: rgb(255, 255, 255);
+}
+
+------------------------------------------------------------------CSS---------------End--------------------------
